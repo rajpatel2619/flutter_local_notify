@@ -38,6 +38,21 @@ class NotificationService extends ChangeNotifier {
         payload: "welcome to demo app");
 
   }
+  //instant notification
+  Future instantNotification2() async {
+     var scheduledNotificationDateTime =
+      DateTime.now().add(Duration(seconds: 8));
+
+    var android = AndroidNotificationDetails("id", "channel", "description");
+    var ios = IOSNotificationDetails();
+    var platform = new NotificationDetails(android: android, iOS: ios);
+    // await _flutterLocalNotificationsPlugin.show(
+    //     0, "demo instant notify", "tap to do something", platform,
+    //     payload: "welcome to demo app");
+    await _flutterLocalNotificationsPlugin.schedule(0, "title", "body", scheduledNotificationDateTime,platform);
+
+
+  }
 
   Future cancelNotification()async{
     await _flutterLocalNotificationsPlugin.cancelAll();

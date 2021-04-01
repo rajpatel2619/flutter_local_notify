@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             ElevatedButton(onPressed: () {}, child: Text("Image Notification")),
             ElevatedButton(onPressed: () {}, child: Text("Media Notification")),
             ElevatedButton(
-                onPressed: () {}, child: Text("Scheduled Notification")),
+                onPressed: ()=>model.instantNotification2(), child: Text("Scheduled Notification")),
             ElevatedButton(
                 onPressed: () {}, child: Text("Cancel Notification")),
           ]),
